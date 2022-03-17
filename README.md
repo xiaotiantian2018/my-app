@@ -68,3 +68,55 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- tian++++ -->
+1. npx create-react-app my-react-app2022
+cd my-react-app2022
+npm start
+利用create-react-app快速创建react应用；
+2. npm install -D react-router-dom
+安装react-router-dom@^6.2.2 插件，
+（1）在src文件夹创建router文件夹，在里面新建router.js，编写路由配置
+import React from 'react';
+import Home from '../container/home';
+import {
+  BrowserRouter, // 路由使用 history模式
+  Routes,
+  Route
+} from 'react-router-dom';
+class Router extends React.Component {
+  render() {
+    return (
+      <div className="Router">
+        <BrowserRouter>
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    );
+  }
+}
+
+export default Router;
+（2）改造index.js，引入路由配置
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import Router from './router/router';
+import reportWebVitals from './reportWebVitals';
+
+ReactDOM.render(
+  <React.StrictMode>
+      <Router />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+reportWebVitals();
+
+3.参考网址
+https://blog.csdn.net/qq_43392573/article/details/121658373；
+https://blog.csdn.net/qq_43392573/article/details/121658373；
+
+
