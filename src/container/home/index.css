@@ -1,0 +1,14 @@
+
+.welcome{
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+  justify-content: center;
+  align-items: center;
+}
+main{
+  padding:0 15px;
+}
+

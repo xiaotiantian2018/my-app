@@ -6,19 +6,8 @@
   height: 40vmin;
   pointer-events: none;
 }
-.welcome{
-  display: flex;
-  flex-direction: row;
-  font-size: 18px;
-  font-weight: bold;
-  color: red;
-  justify-content: center;
-  align-items: center;
 
-}
-main{
-  padding:0 15px;
-}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

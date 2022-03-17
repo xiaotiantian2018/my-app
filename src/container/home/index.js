@@ -1,13 +1,12 @@
-import './App.css';
+import './index.css';
 import React from 'react';
-import StateMsg from './components/StateMsg';
-import Logined from './components/Logined';
-import EventBind from './components/EventBind';
-import WarningBanner from './components/WarningBanner';
-import ListItems from './components/ListItems/ListItems';
-import List from './components/ListItems/List';
-
-
+import StateMsg from '../../components/StateMsg';
+import Logined from '../../components/Logined';
+import EventBind from '../../components/EventBind';
+import WarningBanner from '../../components/WarningBanner';
+import ListItems from '../../components/ListItems/ListItems';
+import List from '../../components/ListItems/List';
+import {Link} from 'react-router-dom'
 const user = {
   firstName: 'zhang',
   lastName: 'san',
@@ -23,7 +22,7 @@ const getGreeting = (user) => {
   }
 
 }
-class App extends React.Component {
+class Home extends React.Component {
   constructor() {
     // super关键字，它指代父类的实例（即父类的this对象）。
     // 子类必须在constructor方法中调用super方法，否则新建实例时会报错。
@@ -67,11 +66,11 @@ class App extends React.Component {
     }))
   }
   render() {
-    let name = this.props.name
     let { x, y, date, msg, isShowBann,posts } = this.state
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className="p_index">
+        <header className="index-header">
+          <Link to="me" >test</Link>
           {getGreeting(user)}
           <img src={user.avatarUrl} width="100" height="50" alt=""></img>
         </header>
@@ -84,9 +83,6 @@ class App extends React.Component {
             </div>
             {/* props 父传子通信方式，欢迎您开始 */}
             <div className='welcome'>
-              <div>
-                {name}
-              </div>
               {/* 组件可以选择把它的 state 作为 props 向下传递到它的子组件中 */}
               <StateMsg msg={msg}></StateMsg>
             </div>
@@ -127,4 +123,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Home;
