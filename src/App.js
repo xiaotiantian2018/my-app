@@ -4,7 +4,8 @@ import StateMsg from './components/StateMsg';
 import Logined from './components/Logined';
 import EventBind from './components/EventBind';
 import WarningBanner from './components/WarningBanner';
-
+import ListItems from './components/ListItems/ListItems';
+import List from './components/ListItems/List';
 
 
 const user = {
@@ -34,7 +35,11 @@ class App extends React.Component {
       y: 0,
       date: new Date(),
       msg: '你好',
-      isShowBann: false
+      isShowBann: false,
+      posts: [
+        {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+        {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+      ]
     }
   }
   componentDidMount() {
@@ -63,7 +68,7 @@ class App extends React.Component {
   }
   render() {
     let name = this.props.name
-    let { x, y, date, msg, isShowBann } = this.state
+    let { x, y, date, msg, isShowBann,posts } = this.state
     return (
       <div className="App">
         <header className="App-header">
@@ -103,6 +108,15 @@ class App extends React.Component {
               <Logined isLoggedIn={true} />
               <WarningBanner isShow={isShowBann} />
               <button onClick={this.handleToggleBan.bind(this)}>{isShowBann ? 'hide' : 'show'}</button>
+            </div>
+
+            <div>
+            <List />
+            <ul>
+            { posts.map((post)=>
+              <ListItems key={post.id} post={post}/>
+            )}
+            </ul>
             </div>
 
 
