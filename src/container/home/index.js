@@ -70,7 +70,12 @@ class Home extends React.Component {
     return (
       <div className="p_index">
         <header className="index-header">
-          <Link to="me" >test</Link>
+          <Link to="form">form</Link>
+          <br/><br/>
+          <Link to="userinfo">userInfo</Link>
+          <br/><br/>
+          <Link to="counter">counter</Link>
+          <br/><br/>
           {getGreeting(user)}
           <img src={user.avatarUrl} width="100" height="50" alt=""></img>
         </header>
