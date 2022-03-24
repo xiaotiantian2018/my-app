@@ -69,6 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 <!-- tian++++ -->
+一、react-router-dom
 1. npx create-react-app my-react-app2022
 cd my-react-app2022
 npm start
@@ -118,5 +119,50 @@ reportWebVitals();
 3.参考网址
 https://blog.csdn.net/qq_43392573/article/details/121658373；
 https://blog.csdn.net/qq_43392573/article/details/121658373；
+
+二、react-redux，redux
+1.安装：
+npm install -S react-redux
+npm install --s redux
+2.store的创建
+代码见redux文件夹里的文件
+3.store的使用
+store要在最顶层使用，这样下面的每个组件才能使用和修改store里面的值；
+引入store，在路由开始引入，修改入口文件index.js,增加如下代码：
+import { Provider } from 'react-redux'
+import store from './redux'
+<Provider store={store}>
+</Provider>
+
+全部代码如下：
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import Router from './router/router';
+import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux'
+import store from './redux'
+
+
+ReactDOM.render(
+  <Provider store={store}>
+    <React.StrictMode>
+      <Router />
+    </React.StrictMode>
+  </Provider>,
+  document.getElementById('root')
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+4.此时下面的组件是可以获取到store里面的值了，
+请参考文件F:\src\container\userinfo\index.js和\src\container\counter\index.js
+
+
+
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { changeData, changeName } from '../../redux/reducers/userInfoReducer'
+import { changeData, changeName } from '@/redux/reducers/userInfoReducer'
 
 
 class UserInfo extends React.Component {

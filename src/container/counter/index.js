@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { incrementNum, decrementNum } from '../../redux/reducers/counterReducer'
-import store from '../../redux/'
+import { incrementNum, decrementNum } from '@/redux/reducers/counterReducer'
 
 class Counter extends React.Component {
     onIncreNowNum() {

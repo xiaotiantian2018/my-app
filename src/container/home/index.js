@@ -1,4 +1,4 @@
-import './index.css';
+import './index.scss';
 import React from 'react';
 import StateMsg from '../../components/StateMsg';
 import Logined from '../../components/Logined';
@@ -69,7 +69,7 @@ class Home extends React.Component {
     let { x, y, date, msg, isShowBann,posts } = this.state
     return (
       <div className="p_index">
-        <header className="index-header">
+        <header className="index_header">
           <Link to="form">form</Link>
           <br/><br/>
           <Link to="userinfo">userInfo</Link>
@@ -97,7 +97,7 @@ class Home extends React.Component {
               {x}<br />
               {y}
               <p style={{ height: "100px" }} onMouseMove={this.handleMouseMove.bind(this)}>
-                onMouseMove
+                点击onMouseMove此按钮setState修改x，y的值
               </p>
             </div>
 
