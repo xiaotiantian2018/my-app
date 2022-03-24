@@ -70,11 +70,15 @@ class Home extends React.Component {
     return (
       <div className="p_index">
         <header className="index_header">
-          <Link to="form">form</Link>
+        
+          <Link to={{pathname:'/form', state: {id:'2'}}}>form</Link>
           <br/><br/>
           <Link to="userinfo">userInfo</Link>
           <br/><br/>
           <Link to="counter">counter</Link>
+          <br/><br/>
+          <Link to="jumpPage">jumpPage</Link>
+          
           <br/><br/>
           {getGreeting(user)}
           <img src={user.avatarUrl} width="100" height="50" alt=""></img>

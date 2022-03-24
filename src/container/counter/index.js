@@ -13,7 +13,7 @@ class Counter extends React.Component {
         const props = this.props
         // 这里是把store的值，并入到props的里面
         // 如果是class组件，就是this.props
-        console.log(props)
+        console.log('props',props)
         return (
             <div>
                 store里的计数器数字counter的值：{props.data.counter}
@@ -25,17 +25,12 @@ class Counter extends React.Component {
                 <button onClick={props.decreNowNum}>
                     减少counter的值
                 </button> */}
-
                 <button onClick={() => this.onIncreNowNum()}>
                     增加counter的值1
                 </button>
                 <button onClick={() => this.onDecreNowNum()}>
                     减少counter的值1
                 </button>
-
-
-
-
             </div>
         )
     }

@@ -75,30 +75,28 @@ cd my-react-app2022
 npm start
 利用create-react-app快速创建react应用；
 2. npm install -D react-router-dom
-安装react-router-dom@^6.2.2 插件，
+安装react-router-dom@^5.3.0 插件，
 （1）在src文件夹创建router文件夹，在里面新建router.js，编写路由配置
 import React from 'react';
-import Home from '../container/home';
-import {
-  BrowserRouter, // 路由使用 history模式
-  Routes,
-  Route
-} from 'react-router-dom';
+import Home from '../container/home/';
+import { Router, Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
+
 class Router extends React.Component {
   render() {
     return (
-      <div className="Router">
         <BrowserRouter>
-          <Routes>
-            <Route exact path='/' element={<Home />} />
-          </Routes>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <!-- <Route path="/form" component={Form} /> -->
+            {/* 其他匹配重定向,不可放在首行 */}
+            <Redirect path="*" to="/" />
+          </Switch>
         </BrowserRouter>
-      </div>
-    );
+    )
   }
 }
-
 export default Router;
+
 （2）改造index.js，引入路由配置
 
 import React from 'react';
@@ -117,6 +115,7 @@ ReactDOM.render(
 reportWebVitals();
 
 3.参考网址
+https://www.cnblogs.com/nangezi/p/15733562.html；
 https://blog.csdn.net/qq_43392573/article/details/121658373；
 https://blog.csdn.net/qq_43392573/article/details/121658373；
 
@@ -161,6 +160,20 @@ reportWebVitals();
 
 4.此时下面的组件是可以获取到store里面的值了，
 请参考文件F:\src\container\userinfo\index.js和\src\container\counter\index.js
+5.https://www.jianshu.com/p/794f5aabbdc6;
+https://www.redux.org.cn/docs/basics/ExampleTodoList.html;
+
+三、sass的使用
+
+1.创建项目：create-react-app my-app，如果已经创建项目，可以省略，直接安装依赖
+安装依赖：npm install --save-dev node-sass
+ 
+create-react-app 创建的react项目默认就是支持Sass的，
+使用只要安装node-sass即可使用
+ 
+以上就是sass的安装过程，具体怎么用其实看官网跟着写就行了 
+2.参考网址：https://www.cnblogs.com/konghaowei/p/14255634.html；
+          https://blog.csdn.net/halo1416/article/details/89851709
 
 
 

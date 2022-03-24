@@ -56,6 +56,7 @@ class Form extends React.Component {
     render() {
         // 告诉 React 我们想把 <input> ref 关联到
         // 构造器里创建的 `inputXmRef` 上
+        console.log('form_props',this.props)
         return (
             <form className="p_form" onSubmit={this.handleSubmit.bind(this)}>
                 <label>
