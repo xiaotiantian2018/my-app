@@ -72,6 +72,7 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
+const pxtorem = require('postcss-pxtorem');
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
     return false;
@@ -160,6 +161,16 @@ module.exports = function (webpackEnv) {
                       stage: 3,
                     },
                   ],
+                  
+                  postcssNormalize(),
+                   // 新增加---------------------------------------------
+                  pxtorem({
+                    rootValue: 75, 
+                    propWhiteList: [],
+                    minPixelValue: 2,
+                    exclude: /node_modules/i
+                  })
+                  //--------------------------------------------------
                 ],
           },
           sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,

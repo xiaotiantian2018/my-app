@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import Router from './router/router';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import store from './redux'
-
+import 'lib-flexible';
 import './mock/index.js'
-
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>

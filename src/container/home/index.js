@@ -32,6 +32,7 @@ class Home extends React.Component {
     return (
       <div className="p_index">
         <header className="index_header">
+          <div className='one'>one</div>
           <Link to="jsx">jsx</Link>
           <br /><br />
           <Link to={{ pathname: '/form', state: { id: '2' } }}>form</Link>
