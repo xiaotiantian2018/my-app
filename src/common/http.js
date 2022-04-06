@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import "./axiosMiddleware";
+import "./axiosMiddleware";
 const get = (url,params={})=>{
   return new Promise((resolve,reject)=>{
       axios.get(url,params)

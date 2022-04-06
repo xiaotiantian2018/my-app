@@ -1,9 +1,9 @@
 
 $r:#F00;
 @mixin box(){
-  width:100%;
+  width:750px;
   height:300px;
-  border:1px solid #999;
+  border-bottom:1px solid #999;
 }
 .p_index{
   .link_router a{
