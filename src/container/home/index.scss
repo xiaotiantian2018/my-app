@@ -6,6 +6,10 @@ $r:#F00;
   border:1px solid #999;
 }
 .p_index{
+  .link_router a{
+      margin-right: 40px;
+      margin-bottom:40px ;
+  }
   .index_header{
     background:#EEE ;
     @include box();
@@ -25,9 +29,9 @@ $r:#F00;
 
 }
 .one {
-  width: 200px;
+  width: 750px;
   height: 200px;
-  font-size: 50px;
+  font-size: 16px;
   background: pink;
 }
 

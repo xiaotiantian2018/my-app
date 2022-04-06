@@ -32,21 +32,21 @@ class Home extends React.Component {
     return (
       <div className="p_index">
         <header className="index_header">
-          <div className='one'>one</div>
+          <div className='flex link_router'>
           <Link to="jsx">jsx</Link>
-          <br /><br />
+         
           <Link to={{ pathname: '/form', state: { id: '2' } }}>form</Link>
-          <br /><br />
+         
           <Link to="userinfo">userInfo</Link>
-          <br /><br />
+         
           <Link to="counter">counter</Link>
-          <br /><br />
+         
           <Link to="jumpPage">jumpPage</Link>
-          <br /><br />
+         
           <Link to="stateDidMount">stateDidMount</Link>
-          <br /><br />
+         
           <Link to="axiosStudy">axiosStudy</Link>
-          <br /><br />
+          </div>
         </header>
         <main>
           <div tabIndex="0" >

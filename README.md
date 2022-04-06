@@ -175,6 +175,9 @@ create-react-app 创建的react项目默认就是支持Sass的，
 2.参考网址：https://www.cnblogs.com/konghaowei/p/14255634.html；
           https://blog.csdn.net/halo1416/article/details/89851709
 
+四、react脚手架搭建及移动端适配解决方案（详细）
+参考网址：https://mbd.baidu.com/ug_share/mbox/4a81af9963/share?tk=94497ecd002c8fa359b5f5e14c5ad5ca&share_url=https%3A%2F%2Fyebd1h.smartapps.cn%2Fpages%2Fblog%2Findex%3FblogId%3D121973489%26_swebfr%3D1%26_swebFromHost%3Dbaiduboxapp
+
 
 
 

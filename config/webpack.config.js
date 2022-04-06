@@ -71,8 +71,6 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
-
-const pxtorem = require('postcss-pxtorem');
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
     return false;
@@ -147,6 +145,15 @@ module.exports = function (webpackEnv) {
                   // Adds PostCSS Normalize as the reset css with default options,
                   // so that it honors browserslist config in package.json
                   // which in turn let's users customize the target behavior as per their needs.
+
+                  require('postcss-px-to-viewport')({
+                    viewportWidth: 750, // (Number) 转换的基础参考比例(设计稿的宽度),量多少px写多少像素
+                    unitPrecision: 3, // (Number) 转换之后保留多少位小数
+                    viewportUnit: "vw", // (String) 转换之后的单位
+                    selectorBlackList: [], // (Array) 哪一些指定的选择器不进行转换
+                    minPixelValue: 1, // (Number) 最小开始转换的像素值
+                    mediaQuery: false // (Boolean) 是否允许在媒体查询中使用转换
+                  }),
                   'postcss-normalize',
                 ]
               : [
@@ -161,16 +168,8 @@ module.exports = function (webpackEnv) {
                       stage: 3,
                     },
                   ],
-                  
+                 
                   postcssNormalize(),
-                   // 新增加---------------------------------------------
-                  pxtorem({
-                    rootValue: 75, 
-                    propWhiteList: [],
-                    minPixelValue: 2,
-                    exclude: /node_modules/i
-                  })
-                  //--------------------------------------------------
                 ],
           },
           sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,

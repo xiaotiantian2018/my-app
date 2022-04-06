@@ -14,3 +14,15 @@ code {
 .mt20{
   margin-top: 20px;
 }
+.flex {
+  display: flex;
+  flex-direction: row;
+  /*属性定义容器要在哪个方向上堆叠 flex 项目,row（默认值）*/
+  flex-wrap: nowrap;
+  /*规定是否应该对 flex 项目换行,nowrap（默认值）*/
+  justify-content: flex-start;
+  /*当弹性项目没有用到主轴上的所有可用空间时，水平对齐这些项目,默认值：flex-start, flex-start的值将flex项目在容器的开头对齐（默认）*/
+  align-items: stretch;
+  /*当弹性项目没有用到主轴上的所有可用空间时，垂直对齐这些项目, 默认值：stretch, stretch 值拉伸 flex 项目以填充容器*/
+ 
+}
